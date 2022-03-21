@@ -1,16 +1,74 @@
 const assert = require('chai').assert;
 
-describe('main page', async function() {
-  it('should have h1', async function() {
-    await this.browser.url('/');
+hermione.config.testTimeout(100500);
 
-    const title = await this.browser.$('h1').getText();
-    assert.equal(title, 'Neural Search Engine');
-  });
+it('creates a screenshot of the Home page', async function() {
+  await this.browser.url('/');
+  const cookiesBtn = await this.browser.$('#cookit-button')
+  if (cookiesBtn.elementId) {
+    await cookiesBtn.click();
+  }
+  await this.browser.assertView('plain', 'body',
+    {
+      tolerance: 2,
+      antialiasingTolerance: 2,
+      allowViewportOverflow: true,
+      captureElementFromTop: true,
+      compositeImage: true,
+      screenshotDelay: 10,
+    });
 });
 
-hermione.config.testTimeout(100500);
-it('creates a screenshot of the skills page', async function() {
-  await this.browser.url('/');
-  await this.browser.assertView('header', 'header');
+it('creates a screenshot of the Use Cases page', async function() {
+  await this.browser.url('/use-cases/');
+  const cookiesBtn = await this.browser.$('#cookit-button')
+  if (cookiesBtn.elementId) {
+    await cookiesBtn.click();
+  }
+  await this.browser.assertView('plain', 'body',
+    {
+      ignoreElements: ['#cookit-button'],
+      tolerance: 2,
+      antialiasingTolerance: 2,
+      allowViewportOverflow: true,
+      captureElementFromTop: true,
+      compositeImage: true,
+      screenshotDelay: 10,
+    });
+});
+
+it('creates a screenshot of the Solutions page', async function() {
+  await this.browser.url('/solutions/');
+  const cookiesBtn = await this.browser.$('#cookit-button')
+  if (cookiesBtn.elementId) {
+    await cookiesBtn.click();
+  }
+  await this.browser.assertView('plain', 'body',
+    {
+      ignoreElements: ['#cookit-button'],
+      tolerance: 2,
+      antialiasingTolerance: 2,
+      allowViewportOverflow: true,
+      captureElementFromTop: true,
+      compositeImage: true,
+      screenshotDelay: 10,
+    });
+});
+
+it('creates a screenshot of the Articles page', async function() {
+  await this.browser.url('/articles/');
+  const cookiesBtn = await this.browser.$('#cookit-button')
+  if (cookiesBtn.elementId) {
+    await cookiesBtn.click();
+  }
+  await this.browser.assertView('plain', 'body',
+    {
+      ignoreElements: ['#cookit-button'],
+      tolerance: 2,
+      antialiasingTolerance: 2,
+      allowViewportOverflow: true,
+      captureElementFromTop: true,
+      compositeImage: true,
+      screenshotDelay: 10,
+    });
 });

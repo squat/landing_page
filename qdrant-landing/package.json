@@ -1,0 +1,25 @@
+{
+  "name": "qdrant-landing",
+  "version": "1.0.0",
+  "description": "A Site for Qdrant Search Engine",
+  "main": "package.json",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "hermione": "^4.7.8",
+    "harry-reporter": "^2.1.3"
+  },
+  "scripts": {
+    "test": "hermione"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qdrant/landing_page.git"
+  },
+  "author": "qdrant",
+  "bugs": {
+    "url": "https://github.com/qdrant/landing_page/issues"
+  }
+}
